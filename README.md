@@ -4,14 +4,14 @@
 
 # Team : Rizky Dharma Andika Raya & Rahel
 
-Tools Reused : Mongodb, SWR, Material UI, bycryptjs, next/auth
+Tools Reused : Mongodb, Axios, Material UI, bycryptjs, next/auth, next/server, currency-formatter
 
-Config : Set Environment Variables 
+* Config : Set Environment Variables 
 
-Mongo = ....
-GOOGLE_CLIENT_ID = ....
-GOOGLE_CLIENT_SECRET = ....
+* Mongo = ....
+* GOOGLE_CLIENT_ID = ....
+* GOOGLE_CLIENT_SECRET = ....
 
-NEXTAUTH_SECRET = "dawndwdurgksdaaawnd"
-NEXTAUTH_URL = "http://localhost:3000"
+* NEXTAUTH_SECRET = "dawndwdurgksdaaawnd"
+* NEXTAUTH_URL = "http://localhost:3000"
 

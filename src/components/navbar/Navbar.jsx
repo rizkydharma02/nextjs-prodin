@@ -61,29 +61,12 @@ const Navbar = () => {
         ))}
 
         {session.status === 'authenticated' && (
-          <Link href='/barang'>
-          <Button
-            variant="contained"
-            sx={{
-              padding: '7px',
-              backgroundColor: '#53c28b',
-              color: 'white',
-              cursor: 'pointer',
-              borderRadius: '3px',
-            }}
-          >
-            Barang
-          </Button>
-          </Link>
-        )}
-
-        {session.status === 'authenticated' && (
           <Button
             variant="contained"
             onClick={signOut}
             sx={{
               padding: '7px',
-              backgroundColor: '#53c28b',
+              backgroundColor: '#CD1818',
               color: 'white',
               cursor: 'pointer',
               borderRadius: '3px',

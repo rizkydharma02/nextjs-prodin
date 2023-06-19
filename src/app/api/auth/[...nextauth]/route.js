@@ -25,10 +25,10 @@ const handler = NextAuth({
             if (isPasswordCorrect) {
               return user;
             } else {
-              throw new Error('Wrong Credentials!');
+              throw new Error('Password Anda Salah!');
             }
           } else {
-            throw new Error('User not found!');
+            throw new Error('User Tidak Ditemukan!');
           }
         } catch (err) {
           throw new Error(err);
