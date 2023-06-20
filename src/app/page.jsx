@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import Link from 'next/link';
+import LoginIcon from '@mui/icons-material/Login';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         <Typography variant="p" sx={{ fontSize: 24, fontWeight: 300 }}>
           Dengan Bersama Anda Layanan Kami Akan Selalu Ada...
         </Typography>
-        <Button variant='contained' sx={{ width: '30px', bgcolor: '#71c08f'}}>
+        <Button variant='contained' sx={{ width: '100%', bgcolor: '#71c08f'}} endIcon={<LoginIcon/>}>
             <Link href='/dashboard/login'>
               Login
             </Link>

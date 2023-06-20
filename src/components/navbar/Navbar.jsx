@@ -1,18 +1,19 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import { Box, Button } from '@mui/material';
 import { signOut, useSession } from 'next-auth/react';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const links = [
   {
     id: 1,
-    title: 'About',
+    title: 'Tentang Kami',
     url: '/about',
   },
   {
     id: 2,
-    title: 'Contact',
+    title: 'Kontak',
     url: '/contact',
   },
   {
@@ -71,6 +72,7 @@ const Navbar = () => {
               cursor: 'pointer',
               borderRadius: '3px',
             }}
+            endIcon={<LogoutIcon />}
           >
             Logout
           </Button>

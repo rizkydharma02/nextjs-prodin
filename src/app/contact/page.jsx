@@ -1,59 +1,42 @@
-'use client'
+'use client';
+import { styled } from '@mui/material/styles';
+import Image from 'next/image';
+import { Button, Typography, Input } from '@mui/material';
 
-import { styled } from "@mui/material/styles";
-import Image from "next/image";
-import {Button} from "@mui/material";
-import { FormControl } from '@mui/material';
-
-const Container = styled("div")`
+const Container = styled('div')`
   box-sizing: border-box;
 `;
 
-const Title = styled("h2")`
+const Title = styled('h2')`
   font-size: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 `;
 
-const Content = styled("div")`
-  display: flex;
-  align-items: center;
-  gap: 100px;
-`;
-
-const ImageStyled = styled('div')`
-  object-fit: contain;
-  animation: move 3s infinite ease alternate; 
-`;
-
-const Form = styled("form")`
-  flex: 1;
+const Content = styled('div')`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 5px;
 `;
 
-const Input = styled("input")`
-  padding: 20px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: #bbb;
-  border: 3px solid #bbb;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px
+const ImageContainer = styled('div')`
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const TextArea = styled("textarea")`
-  padding: 20px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: #bbb;
-  border: 3px solid #bbb;
-  font-size: 20px;
-  font-weight: bold;
+const ImageStyled = styled(Image)`
+  object-fit: contain;
+`;
+
+const Form = styled('form')`
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
 `;
 
 const Contact = () => {
@@ -61,23 +44,13 @@ const Contact = () => {
     <Container>
       <Title>Kontak Kami</Title>
       <Content>
-          <ImageStyled>
-            <Image src='/kontak.png' alt="kontak" width={600} height={600} />
-          </ImageStyled>
-        <Form>
-        <FormControl>
-          <Input type="text" placeholder="name" />
-          <Input type="text" placeholder="email" />
-          <TextArea
-            placeholder="message"
-            cols="30"
-            rows="10"
-          ></TextArea>
-          <Button variant='contained' sx={{ width: '100%', bgcolor: '#71c08f'}}>
-             Submit
+        <ImageContainer>
+          <ImageStyled src="/kontak.png" alt="kontak" width={600} height={600} />
+        </ImageContainer>
+        <Form method="post" action={'mailto:rizkydharma02@gmail.com?body=halo%20prodin%20saya%20ingin%20bertanya'}>
+          <Button variant="contained" type="submit" value="Submit" sx={{ width: '100%', bgcolor: '#71c08f', height: 40 }}>
+            Ajukan Pertanyaan Anda!
           </Button>
-          <br/>
-          </FormControl>
         </Form>
       </Content>
     </Container>

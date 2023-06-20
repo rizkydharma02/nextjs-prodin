@@ -4,7 +4,7 @@
 
 # Team : Rizky Dharma Andika Raya & Rahel
 
-Tools Reused : Mongodb, Axios, Material UI, bycryptjs, next/auth, next/server, currency-formatter
+Tools Reused : Mongodb, Axios, Material UI, bycryptjs, next-auth/react, next/server
 
 * Config : Set Environment Variables 
 
