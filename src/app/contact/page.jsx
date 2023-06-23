@@ -42,7 +42,7 @@ const Form = styled('form')`
 const Contact = () => {
   return (
     <Container>
-      <Title>Kontak Kami</Title>
+      <Title data-testId="contact-title">Kontak Kami</Title>
       <Content>
         <ImageContainer>
           <ImageStyled src="/kontak.png" alt="kontak" width={600} height={600} />

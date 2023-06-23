@@ -1,21 +1,22 @@
-'use client'
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import { Box } from "@mui/material";
+'use client';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import { Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Footer() {
   return (
     <Box
       sx={{
-        marginBottom: '20px'
+        marginBottom: '20px',
       }}
       component="footer"
     >
-      <Container maxWidth="sm" sx={{ width: "100%" }}>
+      <Container maxWidth="sm" sx={{ width: '100%' }} data-testId="footer">
         <Typography variant="body2" color="#bbbbbb" align="center">
-          Created With <FavoriteIcon  sx={{ color: '#DB005B', fontSize: 15}} />&nbsp; Prodin &nbsp;
+          Created With <FavoriteIcon sx={{ color: '#DB005B', fontSize: 15 }} />
+          &nbsp; Prodin &nbsp;
           {new Date().getFullYear()}
         </Typography>
       </Container>

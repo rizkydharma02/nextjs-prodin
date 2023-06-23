@@ -1,50 +1,50 @@
-'use client'
-import { Button } from "@mui/material";
-import { styled } from "@mui/system";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import { Button } from '@mui/material';
+import { styled } from '@mui/system';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const Container = styled("div")({
-  boxSizing: "border-box",
+const Container = styled('div')({
+  boxSizing: 'border-box',
 });
 
-const ImgContainer = styled("div")({
-  width: "100%",
+const ImgContainer = styled('div')({
+  width: '100%',
   height: 300,
-  position: "relative",
+  position: 'relative',
 });
 
 const Img = styled(Image)({
-  objectFit: "cover",
-  filter: "grayscale(100%)",
+  objectFit: 'cover',
+  filter: 'grayscale(100%)',
 });
 
-const ImgText = styled("div")({
-  position: "absolute",
+const ImgText = styled('div')({
+  position: 'absolute',
   bottom: 20,
   left: 20,
-  backgroundColor: "#53c28b",
+  backgroundColor: '#53c28b',
   padding: 5,
-  color: "white",
+  color: 'white',
 });
 
-const TextContainer = styled("div")({
-  display: "flex",
+const TextContainer = styled('div')({
+  display: 'flex',
   gap: 100,
 });
 
-const Item = styled("div")({
+const Item = styled('div')({
   flex: 1,
   marginTop: 50,
-  display: "flex",
-  flexDirection: "column",
+  display: 'flex',
+  flexDirection: 'column',
   gap: 30,
 });
 
-const Desc = styled("p")({
+const Desc = styled('p')({
   fontSize: 18,
   fontWeight: 300,
-  textAlign: "justify",
+  textAlign: 'justify',
 });
 
 const About = () => {
@@ -52,7 +52,7 @@ const About = () => {
     <Container>
       <ImgContainer>
         <Img src="/bannerabout.jpg" fill={true} alt="" />
-        <ImgText>
+        <ImgText data-testId="about-title">
           <h1>Digital Manajemen Barang Atau Produk Anda</h1>
           <h2>Kami Melayani Bisnis Anda Dengan Baik</h2>
         </ImgText>
@@ -78,8 +78,10 @@ const About = () => {
             <br />
             <br /> - Kustom Manajemen Anda
           </Desc>
-          <Button variant="contained" sx={{ width: "35%", bgcolor: "#71c08f" }}>
-            <Link href="/contact">Kontak Kami</Link>
+          <Button variant="contained" sx={{ width: '35%', bgcolor: '#71c08f' }}>
+            <Link href="/contact" data-testId="about-button">
+              Kontak Kami
+            </Link>
           </Button>
           <br />
         </Item>

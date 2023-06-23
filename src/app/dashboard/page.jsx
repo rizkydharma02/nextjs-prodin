@@ -7,7 +7,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
+import { useSession, SessionProvider } from 'next-auth/react';
 
 const Products = () => {
   const session = useSession();
@@ -152,37 +152,37 @@ const Products = () => {
     const errors = {};
 
     if (!newProduct.productName) {
-      errors.productName = 'Product name is required';
+      errors.productName = 'Produk harus diisi!';
       isValid = false;
     }
 
     if (!newProduct.category) {
-      errors.category = 'Category is required';
+      errors.category = 'Kategori Produk harus diisi';
       isValid = false;
     }
 
     if (!newProduct.startDate) {
-      errors.startDate = 'Start date is required';
+      errors.startDate = 'Tanggal Awal harus diisi';
       isValid = false;
     }
 
     if (!newProduct.endDate) {
-      errors.endDate = 'End date is required';
+      errors.endDate = 'Tanggal Akhir harus diisi';
       isValid = false;
     }
 
     if (!newProduct.stock) {
-      errors.stock = 'Stock is required';
+      errors.stock = 'Stok Produk harus diisi!';
       isValid = false;
     }
 
     if (!newProduct.price) {
-      errors.price = 'Price is required';
+      errors.price = 'Harga Produk harus diisi';
       isValid = false;
     }
 
     if (!newProduct.sell) {
-      errors.sell = 'Sell is required';
+      errors.sell = 'Penjualan harus diisi';
       isValid = false;
     }
 
@@ -209,13 +209,15 @@ const Products = () => {
   if (session.status === 'authenticated') {
     return (
       <div>
-        <h1 style={{ textAlign: 'center', marginBottom: 20 }}>Manajemen Produk</h1>
+        <h1 style={{ textAlign: 'center', marginBottom: 20 }} data-testId="title-dashboard">
+          Manajemen Produk
+        </h1>
 
         <form onSubmit={handleSubmit}>
           {!isEditing && (
             <>
-              <TableContainer component={Paper} sx={{ marginBottom: 3 }}>
-                <Table>
+              <TableContainer component={Paper} sx={{ marginBottom: 3 }} fullWidth>
+                <Table sx={{ marginBottom: 3 }}>
                   <TableHead sx={{ bgcolor: '#BACDDB' }}>
                     <TableRow>
                       <TableCell>
@@ -304,10 +306,10 @@ const Products = () => {
             </>
           )}
 
-          <TableContainer component={Paper} sx={{ marginBottom: 3 }}>
-            <Table>
-              <TableHead sx={{ bgcolor: '#BACDDB' }}>
-                <TableRow>
+          <TableContainer component={Paper} sx={{ marginBottom: 3 }} fullWidth>
+            <Table fullWidth>
+              <TableHead sx={{ bgcolor: '#BACDDB' }} fullWidth>
+                <TableRow fullWidth>
                   <TableCell>
                     <Typography sx={{ fontSize: 17, fontWeight: 'bold' }}>No</Typography>
                   </TableCell>
@@ -315,7 +317,9 @@ const Products = () => {
                     <Typography sx={{ fontSize: 17, fontWeight: 'bold' }}>Nama Produk</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography sx={{ fontSize: 17, fontWeight: 'bold' }}>Kategori Produk</Typography>
+                    <Typography sx={{ fontSize: 17, fontWeight: 'bold' }} fullWidth>
+                      Kategori Produk
+                    </Typography>
                   </TableCell>
                   <TableCell>
                     <Typography sx={{ fontSize: 17, fontWeight: 'bold' }}>Tanggal Awal</Typography>
@@ -414,4 +418,12 @@ const Products = () => {
   }
 };
 
-export default Products;
+const ProductsPage = () => {
+  return (
+    <SessionProvider>
+      <Products />
+    </SessionProvider>
+  );
+};
+
+export default ProductsPage;
