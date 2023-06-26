@@ -48,7 +48,7 @@ const Contact = () => {
           <ImageStyled src="/kontak.png" alt="kontak" width={600} height={600} />
         </ImageContainer>
         <Form method="post" action={'mailto:rizkydharma02@gmail.com?body=halo%20prodin%20saya%20ingin%20bertanya'}>
-          <Button variant="contained" type="submit" value="Submit" sx={{ width: '100%', bgcolor: '#71c08f', height: 40 }}>
+          <Button variant="contained" type="submit" value="Submit" sx={{ width: '100%', bgcolor: '#71c08f', height: 40, marginBottom: 3 }}>
             Ajukan Pertanyaan Anda!
           </Button>
         </Form>

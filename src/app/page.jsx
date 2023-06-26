@@ -11,7 +11,7 @@ export default function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 7 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 4 }}>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 5 }}>
           <Typography data-testId="home-title" variant="h1" sx={{ fontSize: 72, background: 'linear-gradient(to bottom, #194c33, #bbb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             Jalankan Manajemen Produk Bisnis Anda Lebih Mudah!
